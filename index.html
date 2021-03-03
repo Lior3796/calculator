@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>calc</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="result"></div>
+        <div>
+        <button onclick="signs(`+`)" id="+">+</button>
+        <button onclick="signs(`-`)" id="-">-</button>
+        <button onclick="signs(`*`)" id="*">*</button>
+        <button onclick="signs(`/`)" id="/">/</button>
+    </div>
+    <div>
+        <button onclick="addDigit(1)" id="1">1</button>
+        <button onclick="addDigit(2)" id="2">2</button>
+        <button onclick="addDigit(3)" id="3">3</button>
+        <button onclick="addDigit(4)" id="4">4</button>
+    </div>
+    <div>
+        <button onclick="addDigit(5)" id="5">5</button>
+        <button onclick="addDigit(6)" id="6">6</button>
+        <button onclick="addDigit(7)" id="7">7</button>
+        <button onclick="addDigit(8)" id="8">8</button>
+    </div>
+    <div>
+        <button>0</button>
+        <button onclick="addDigit(9)" id="9">9</button>
+        <button id="equal" onclick="calculate()">=</button>
+        <button id="AC" type="reset">reset</button>
+        <button>.</button>
+    </div>
+    </div>
+    <script src="/main.js"></script>
+</body>
+
+</html>

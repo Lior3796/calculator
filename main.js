@@ -2,36 +2,43 @@ var output = document.getElementById("result");
 var calcNumber = 0;
 var secondNumber = 0;
 var counter = 0;
+var onlySign;
 var sign;
 output.innerText = calcNumber;
-// var num1;
-// var num2;
-// var counter = 0;
-// var sign;
 
 function signs(sign){
     let result = document.getElementById(`${sign}`).innerText;
+    onlySign = result;
     result = calcNumber + result;
     output.innerText = result;
     sign = result;
     counter++;
+    console.log(sign);
 }
 function addDigit(num1){
+    if(counter === -1){
+       result = (num1 + calcNumber) / 10;
+       output.innerText = result;
+
+    }
     if(counter === 1){
         output.innerText = " ";
         secondNumber = 10 * secondNumber + num1;
         output.innerText = secondNumber;
         
     }
-    
-    else {
+    else if(calcNumber === isNaN || secondNumber === isNaN){
+                                  
+    }
+    else{
     calcNumber = 10 * calcNumber + num1;
     output.innerText = calcNumber;
-   
-    }
+}
+    
 }
 function calculate(){
-    switch (sign) {
+    console.log(onlySign);
+    switch (onlySign) {
         case "+":
             output.innerText = calcNumber + secondNumber;
             break;
@@ -49,8 +56,20 @@ function calculate(){
     }
     
 }
+function reset(){
+    output.innerText = "0";
+    calcNumber = 0;
+    secondNumber = 0;
+    sign = null;
+    counter = 0;
+}
+function addDot(sign){   
+    let result = output.innerText + sign;
+    output.innerText = result;
+    counter = -1;
+    
 
-
+}
 
 
     

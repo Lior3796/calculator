@@ -1,9 +1,9 @@
-var output = document.getElementById("result");
-var calcNumber = 0;
-var secondNumber = 0;
-var counter = 0;
-var onlySign;
-var sign;
+let output = document.getElementById("result");
+let calcNumber = 0;
+let secondNumber = 0;
+let counter = 0;
+let onlySign;
+let sign;
 output.innerText = calcNumber;
 
 function signs(sign){
@@ -18,27 +18,39 @@ function signs(sign){
 function addDigit(num1){
     if(counter === 1){
         if(num1 === "."){
-            output.innerText = " ";
             secondNumber = `${secondNumber}.`;
             output.innerText = secondNumber;
+            counter = 3;
+            
+        }
+        else if(counter === 3){
+            secondNumber = secondNumber + num1;
+            output.innerText = secondNumber;
+            counter = 1;
         }
         else{
-        output.innerText = " ";
+        output.innerText = `${secondNumber}`;
         secondNumber = 10 * secondNumber + num1;
         output.innerText = secondNumber;
+       }
     }
+    else if(num1 === "."){
+        calcNumber = `${calcNumber}.`;
+        output.innerText = calcNumber;
+        counter = 3;
     }
-    else {
-        if(num1 === "."){
-            output.innerText = " ";
-            calcNumber = `${calcNumber}.`;
-            output.innerText = calcNumber;
-        }
-        else {
+      
+       
+    else if(counter === 3){
+           calcNumber = calcNumber + num1;
+           output.innerText = calcNumber;
+           counter = 0;
+    } 
+    else{
            calcNumber = 10 * calcNumber + num1;
            output.innerText = calcNumber;
-        } 
-}
+    }
+
     
 }
 function calculate(){
@@ -61,6 +73,7 @@ function calculate(){
     }
     
 }
+// setTimeout(9000,alert("don't forget to reset"));
 function reset(){
     output.innerText = "0";
     calcNumber = 0;

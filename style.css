@@ -1,1 +1,33 @@
-#equal{}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background-color: cadetblue;
+}
+#result {
+    background-color: gray;
+    width: 200px;
+    color:white;
+}
+.container1{
+width: 200px;
+background-color: black;
+display: flex;
+flex-flow: column;
+justify-content: center;
+
+}
+
+#equal1{
+    grid-area: "equal1";
+    width: 100%;
+}
+.col-sm, .row{
+    margin: 0;
+    padding: 0;
+    flex: 0.2;
+}
+#dot{
+    width: 25px;
+}

@@ -16,23 +16,28 @@ function signs(sign){
     console.log(sign);
 }
 function addDigit(num1){
-    if(counter === -1){
-       result = (num1 + calcNumber) / 10;
-       output.innerText = result;
-
-    }
     if(counter === 1){
+        if(num1 === "."){
+            output.innerText = " ";
+            secondNumber = `${secondNumber}.`;
+            output.innerText = secondNumber;
+        }
+        else{
         output.innerText = " ";
         secondNumber = 10 * secondNumber + num1;
         output.innerText = secondNumber;
-        
     }
-    else if(calcNumber === isNaN || secondNumber === isNaN){
-                                  
     }
-    else{
-    calcNumber = 10 * calcNumber + num1;
-    output.innerText = calcNumber;
+    else {
+        if(num1 === "."){
+            output.innerText = " ";
+            calcNumber = `${calcNumber}.`;
+            output.innerText = calcNumber;
+        }
+        else {
+           calcNumber = 10 * calcNumber + num1;
+           output.innerText = calcNumber;
+        } 
 }
     
 }
@@ -63,13 +68,7 @@ function reset(){
     sign = null;
     counter = 0;
 }
-function addDot(sign){   
-    let result = output.innerText + sign;
-    output.innerText = result;
-    counter = -1;
-    
 
-}
 
 
     
